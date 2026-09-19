@@ -1,0 +1,18 @@
+Application Name: Shadow Marker
+Package Name: com.betwinner.shadowmarker
+Activity / Launchable: com.betwinner.shadowmarker.MainActivity
+Target Platform: Android (compileSdk 36, targetSdk 36, minSdk 26)
+Architecture / Framework: Kotlin, Jetpack Compose, Material 3, Clean Architecture (Domain/Data/Presentation)
+
+Key Store:
+  Path: app/ShadowMarker.jks
+  Alias: shadowmarker
+  Store Password: Password123!
+  Key Password: Password123!
+
+Key Hash:
+  xgolf2Tf21CB9EmaR+Dj3IFoQm4=
+
+Fingerprints:
+  SHA1: C6:0A:25:7F:64:DF:DB:50:81:F4:49:9A:47:E0:E3:DC:81:68:42:6E
+  SHA256: 7F:BA:47:8C:55:C1:10:46:C3:F0:A3:62:7F:03:A7:9D:4E:D4:49:F6:DD:E6:91:C1:E4:5D:C1:37:93:60:2A:2A
