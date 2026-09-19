@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -56,50 +55,59 @@ fun ShadowClashesTab(
                     items(uiState.masters, key = { it.id }) { master ->
                         Card(
                             modifier = Modifier
-                                .width(200.dp)
+                                .width(190.dp)
                                 .clickable { onSelectMaster(master) }
                                 .border(1.dp, ShadowGreenBorder, RoundedCornerShape(14.dp)),
                             shape = RoundedCornerShape(14.dp),
                             colors = CardDefaults.cardColors(containerColor = ShadowGreenDark)
                         ) {
                             Column(modifier = Modifier.padding(12.dp)) {
+                                Text(
+                                    text = master.masterName,
+                                    fontSize = 14.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = ShadowGoldBright
+                                )
+                                Text(
+                                    text = master.legendaryClub,
+                                    fontSize = 10.sp,
+                                    color = ShadowMutedGreen
+                                )
+
+                                Spacer(modifier = Modifier.height(8.dp))
+
                                 Row(
                                     modifier = Modifier.fillMaxWidth(),
                                     horizontalArrangement = Arrangement.SpaceBetween,
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
                                     Text(
-                                        text = master.masterName,
-                                        color = ShadowGoldBright,
-                                        fontSize = 13.sp,
-                                        fontWeight = FontWeight.Bold
+                                        text = "${master.avgCoverShadowAngleDegrees.toInt()}° angle",
+                                        fontSize = 12.sp,
+                                        fontWeight = FontWeight.ExtraBold,
+                                        color = ShadowGreenNeon
                                     )
                                     Box(
                                         modifier = Modifier
-                                            .clip(CircleShape)
+                                            .clip(RoundedCornerShape(4.dp))
                                             .background(ShadowGreenElevated)
                                             .padding(horizontal = 6.dp, vertical = 2.dp)
                                     ) {
                                         Text(
-                                            text = "${master.avgCoverShadowAngleDegrees.toInt()}°",
-                                            color = ShadowGreenNeon,
-                                            fontSize = 10.sp,
-                                            fontWeight = FontWeight.Bold
+                                            text = "SCREEN",
+                                            fontSize = 9.sp,
+                                            fontWeight = FontWeight.Bold,
+                                            color = ShadowGold
                                         )
                                     }
                                 }
-                                Text(
-                                    text = master.legendaryClub,
-                                    color = ShadowMutedGreen,
-                                    fontSize = 10.sp
-                                )
-                                Spacer(modifier = Modifier.height(4.dp))
+
+                                Spacer(modifier = Modifier.height(6.dp))
                                 Text(
                                     text = "“${master.tacticalQuote}”",
-                                    color = ShadowSoftGray,
                                     fontSize = 10.sp,
-                                    maxLines = 2,
-                                    lineHeight = 13.sp,
+                                    color = ShadowSoftGray,
+                                    maxLines = 1,
                                     fontStyle = androidx.compose.ui.text.font.FontStyle.Italic
                                 )
                             }
